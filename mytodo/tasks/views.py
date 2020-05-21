@@ -8,9 +8,14 @@ from django.shortcuts import render
 # noch ein Kommentar
 #nochmal ein Kommentar
 
+
 def index(request):
     latest_todo_list = Todo.objects.order_by('id')[:20]
-    context = {'latest_todo_list': latest_todo_list}
+    parst_date_list = []
+    for todo in latest_todo_list:
+        todo.deadline = todo.deadline.date()
+        parst_date_list = parst_date_list + [todo]
+    context = {'latest_todo_list': parst_date_list}
     return render(request, 'tasks/index.html', context)
 
 

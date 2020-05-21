@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="container text-center">
+    		<h1>TODO bearbeiten</h1>
+		</div>
+        <p class="text-center"></p>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="neuesToDo.html">Neu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="TODOaendern.html">Anleitung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="impressum.html">Impressum</a>
+            </li>
+        </ul>
+	</div>
+
+	<div class="container">
+  		<!--<form action="/action_page.php">-->	
+		<form action="{%url 'save' todo.id %}" method='post'> 
+		{% csrf_token %}
+    		<div class="form-group">
+      			<label for="task">Aufgabe ändern (max. 160 Zeichen):</label>
+      			<textarea class="form-control" id="task" name="descriptiontask" lang="de" maxlength="160" spellcheck="false">{{todo.description}}</textarea>
+   			</div>
+			<div class="form-group"> <!--von hier-->
+  				<label for="date">Frist ändern:</label>
+  				<input type="date"  id="date" name="deadline" value="{{todo.deadline}}">
+			</div> <!--bis hier-->
+			<div class="form-group">
+      			<label for="done">Prozentsatz erledigte Arbeit ändern:</label>
+      			<!--<textarea class="form-control" id="done" name="text" lang="de" maxlength="5" spellcheck="false">0,0%</textarea>-->
+				<input type="number" id="done" name="done" min="0" max="100" step="0.1"  size="4" value="{{todo.done}}">%
+   			</div>
+    		<button type="submit" class="btn btn-primary">Speichern</button>
+		</form>
+  		<!--</form>-->
+	</div>
+
+</body>
+</html>

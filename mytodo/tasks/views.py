@@ -41,7 +41,16 @@ def loeschen(request):
 
 def bearbeiten(request, todo_id):
     todo = Todo.objects.get(id=todo_id)
-    context = {'todo': todo}
+    if todo.deadline.month < 10 and todo.deadline.day < 10:
+        newdate = str(todo.deadline.year) + "-" + "0" +str(todo.deadline.month) + "-" + "0" + str(todo.deadline.day)
+    elif todo.deadline.month < 10:
+        newdate = str(todo.deadline.year) + "-" + "0" + str(todo.deadline.month) + "-" + str(todo.deadline.day)
+    elif todo.deadline.day < 10:
+        newdate = str(todo.deadline.year) + "-" + str(todo.deadline.month) + "-" + "0" + str(todo.deadline.day)
+    else:
+        newdate = str(todo.deadline.year) + "-" + str(todo.deadline.month) + "-" + str(todo.deadline.day)
+    print(newdate)
+    context = {'todo': todo, 'date': newdate}
     return render(request, 'tasks/bearbeiten.html', context)
 
 

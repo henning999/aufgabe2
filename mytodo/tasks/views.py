@@ -33,7 +33,7 @@ def loeschen(request):
     for o in todos:
         if str(o.id) in request.POST:
             o.delete()
-    latest_todo_list = Todo.objects.order_by('id')[:20]
+    latest_todo_list = Todo.objects.order_by('id')[:1000]
     context = {'latest_todo_list': latest_todo_list}
     return render(request, 'tasks/loeschen.html', context)
 

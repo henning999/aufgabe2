@@ -43,3 +43,13 @@ def bearbeiten(request, todo_id):
     context = {'todo': todo}
     return render(request, 'tasks/' + todo_id + '/bearbeiten.html', context)
 
+
+def beispiel(request):
+    context = {}
+    return render(request, 'tasks/beispiel.html', context)
+
+
+def impressum(request):
+    context = {}
+    return render(request, 'tasks/impressum.html')
+

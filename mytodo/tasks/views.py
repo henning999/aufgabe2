@@ -36,3 +36,9 @@ def loeschen(request):
     context = {'latest_todo_list': latest_todo_list}
     return render(request, 'tasks/loeschen.html', context)
 
+
+def bearbeiten(request, todo_id):
+    todo = Todo.objects.get(id=todo_id)
+    context = {'todo': todo}
+    return render(request, 'tasks/' + todo_id + '/bearbeiten.html', context)
+

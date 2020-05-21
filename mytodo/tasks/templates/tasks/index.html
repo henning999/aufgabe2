@@ -51,7 +51,7 @@
                 <td>{{todo.deadline}}</td>
                 <td>{{todo.done}}</td>
                 <td>
-                    <form>
+                    <form action="{{% url '{{todo.id}}/bearbeiten' %}}" method="post">
                         {% csrf_token %}
                         <button type=submit class="btn btn-success">Bearbeiten</button>
                     </form>

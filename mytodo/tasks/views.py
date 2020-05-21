@@ -25,7 +25,8 @@ def savenewtodo(request):
         description=description,
         deadline=deadline
     )
-    return HttpResponse("Speichern war erfolgreich.")
+    context = {}
+    return render(request, 'tasks/save.html', context)
 
 
 def loeschen(request):

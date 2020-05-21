@@ -15,16 +15,16 @@
         	<p class="text-center"></p>
         	<ul class="nav justify-content-center">
             	<li class="nav-item">
-                	<a class="nav-link" href="index.html">ToDos</a>
+                	<a class="nav-link" href="{% url 'index' %}">ToDos</a>
            	 	</li>
            	 	<li class="nav-item">
-                	<a class="nav-link" href="neuesToDo.html">Neu</a>
+                	<a class="nav-link" href="{% url 'newtodo' %}">Neu</a>
             	</li>
             	<li class="nav-item">
-                	<a class="nav-link disabled" href="#">Bearbeitung</a>
+                	<a class="nav-link disabled" href="#">Beispiel</a>
             	</li>
             	<li class="nav-item">
-                	<a class="nav-link " href="impressum">Impressum</a>
+                	<a class="nav-link " href="{% url 'impressum' %}">Impressum</a>
             	</li>
         	</ul>
     	</div>

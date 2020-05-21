@@ -17,16 +17,16 @@
         <p class="text-center"></p>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="neuesToDo.html">Neu</a>
+                <a class="nav-link" href="{% url 'newtodo' %}">Neu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="TODOaendern.html">Anleitung</a>
+                <a class="nav-link" href="{% url 'beispiel' %}">Beispiel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="impressum.html">Impressum</a>
+                <a class="nav-link " href="{% url 'impressum'%}">Impressum</a>
             </li>
         </ul>
 	</div>

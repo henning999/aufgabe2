@@ -5,7 +5,7 @@ from .models import Todo
 from django.shortcuts import render
 
 # Create your views here.
-
+# noch ein Kommentar
 
 def index(request):
     latest_todo_list = Todo.objects.order_by('id')[:20]

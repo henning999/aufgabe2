@@ -49,6 +49,7 @@ def save(request, todo_id):
     todo.description = request.POST['descriptiontask']
     todo.deadline = request.POST['deadline']
     todo.done = request.POST['done']
+    todo.save()
     context = {}
     return render(request, 'tasks/save.html', context)
 

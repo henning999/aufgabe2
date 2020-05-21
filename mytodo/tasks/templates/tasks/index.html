@@ -51,6 +51,10 @@
                 <td>{{todo.deadline}}</td>
                 <td>{{todo.done}}</td>
                 <td>
+                    <form action="{% url 'bearbeiten' todo.id %}" method="post">
+                        {% csrf_token %}
+                        <button type=submit class="btn btn-success">Bearbeiten</button>
+                    </form>
                     <form action="{% url 'loeschen' %}" method="post">
                         {% csrf_token %}
                         <input type=submit name={{todo.id}} class="btn btn-danger" value=löschen>

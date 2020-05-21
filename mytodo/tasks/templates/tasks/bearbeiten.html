@@ -33,7 +33,7 @@
 
 	<div class="container">
   		<!--<form action="/action_page.php">-->	
-		<form action="{%url 'save' todo.id %}" method='post'> 
+		<form action="{%url 'save' todo.id %}" method='post'>
 		{% csrf_token %}
     		<div class="form-group">
       			<label for="task">Aufgabe ändern (max. 160 Zeichen):</label>

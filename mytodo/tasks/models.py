@@ -5,5 +5,5 @@ from django.db import models
 
 class Todo(models.Model):
     description = models.CharField(max_length=160)
-    deadline = models.DateTimeField('deadline')
+    deadline = models.DateField('deadline')
     done = models.FloatField(default=0.0)

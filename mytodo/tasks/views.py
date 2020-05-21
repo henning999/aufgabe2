@@ -41,8 +41,16 @@ def loeschen(request):
 def bearbeiten(request, todo_id):
     todo = Todo.objects.get(id=todo_id)
     context = {'todo': todo}
-    return render(request, 'tasks/' + todo_id + '/bearbeiten.html', context)
+    return render(request, 'tasks/bearbeiten.html', context)
 
+
+def save(request, todo_id):
+    todo = Todo.objects.get(id=todo_id)
+    todo.description = request.POST['descriptiontask']
+    todo.deadline = request.POST['deadline']
+    todo.done = request.POST['done']
+    context = {}
+    return render(request, 'tasks/save.html', context)
 
 def beispiel(request):
     context = {}
@@ -51,5 +59,5 @@ def beispiel(request):
 
 def impressum(request):
     context = {}
-    return render(request, 'tasks/impressum.html')
+    return render(request, 'tasks/impressum.html', context)
 

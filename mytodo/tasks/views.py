@@ -34,4 +34,5 @@ def loeschen(request):
             o.delete()
     latest_todo_list = Todo.objects.order_by('id')[:20]
     context = {'latest_todo_list': latest_todo_list}
-    return render(request, 'tasks/index.html', context)
+    return render(request, 'tasks/loeschen.html', context)
+

@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	{% load static %}
 
     <title>TODOaendern</title>
   </head>
@@ -36,7 +37,7 @@
       				<tr>
         				<td>1. Klicken Sie auf der Startseite (ToDos) bei der Aufgabe, die sie ändern möchten, auf den entsprechenden grünen Button. Es erscheint die folgende Seite 						(siehe Bild):
 						<div class="container">          
-  							<img src="foto1.png" class="img-thumbnail" alt="Foto1" width="512" height="398"> <!--width="790 height="613"-->
+  							<img src="{% static 'tasks/foto1.png' %}" class="img-thumbnail" alt="Foto1" width="512" height="398"> <!--width="790 height="613"-->
 						</div>
 					</td>
       				</tr>
